@@ -14,7 +14,6 @@ spring:
       server:
         webflux:
           routes:
-
             - id: insper
               uri: https://www.insper.edu.br
               predicates:
@@ -24,3 +23,35 @@ spring:
               uri: http://account:8080
               predicates:
                 - Path=/account/**
+
+            - id: auth
+              uri: http://auth:8080
+              predicates:
+                - Path=/auth/**
+
+            - id: product
+              uri: http://product:8080
+              predicates:
+                - Path=/product/**
+
+            - id: order
+              uri: http://order:8080
+              predicates:
+                - Path=/order/**
+
+            - id: exchange
+              uri: http://exchange:8080
+              predicates:
+                - Path=/exchange/**
+
+          globalcors:
+            corsConfigurations:
+              "[/]":
+                allowedOrigins: "*"
+                allowedHeaders: "*"
+                allowedMethods: "*"
+
+logging:
+  level:
+    root: info
+    store: debug
