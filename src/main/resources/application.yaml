@@ -38,7 +38,7 @@ spring:
               uri: http://order:8080
               predicates:
                 - Path=/order/**
-
+                
             - id: exchange
               uri: http://exchange:8080
               predicates:
