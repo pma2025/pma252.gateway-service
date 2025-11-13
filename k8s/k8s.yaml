@@ -13,7 +13,7 @@ spec:
         app: gateway
     spec:
       containers:
-        - name: db
+        - name: gateway
           image: luabatepietro/gateway:latest
           imagePullPolicy: Always
           ports:
